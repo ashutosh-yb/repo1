@@ -16,17 +16,17 @@ jobs:
         with:
           fetch-depth: 0
           
-      - name: Push to repo2 repo main branch
+          
+      - name: Push files to another repository
         if: github.ref == 'refs/heads/main'
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        uses: nkoppel/push-files-to-another-repository@1.1.0
         env:
-          API_TOKEN_GITHUB: ${{ secrets.SSH_DEPLOY_KEY }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: 'hello.txt'
-          destination-github-username: 'ashutosh-yb'
-          destination-repository-name: 'repo2'
-          destination_folder: 'dir'
-          user_email: 'ashutosh3194@email.com'
-          user_name: 'ashutosh'
-          target-branch: ${{ github.ref_name }}
+          source-files: 'source.txt'
+          destination-username: 'ashutosh-yb'
+          destination-repository: 'repo2'
+          destination-directory: 'dir/'
+          destination-branch: 'refs/heads/main'
+          commit-email: 'aanshu@yugabyte.com'
           
