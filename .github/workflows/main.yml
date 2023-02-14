@@ -1,0 +1,29 @@
+name: Sync to openapi repos
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+
+jobs:
+  sync:
+    name: apiserver - sync to openapi repos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: Push to repo2 repo main branch
+        if: github.ref == 'refs/heads/main'
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: /hello.txt
+          destination-github-username: 'ashutosh-yb'
+          destination-repository-name: 'repo2'
+          target-branch: main
+          target-directory: dir/dest_file.txt
