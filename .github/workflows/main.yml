@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - main2
 
 jobs:
   copy-file:
@@ -18,12 +19,12 @@ jobs:
           
           
       - name: Copy files to another repository
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main3'
         uses: nkoppel/push-files-to-another-repository@v1.1.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: 'source_dir/file2.txt'
+          source-files: 'source_dir/file_main.txt'
           destination-username: 'ashutosh-yb'
           destination-repository: 'repo2'
           destination-directory: 'dir/'
