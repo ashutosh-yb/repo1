@@ -1,32 +1,32 @@
-name: Sync to openapi repos
+# name: Sync to openapi repos
 
-on:
-  workflow_dispatch: {}
-  push:
-    branches:
-      - main
-      - main2
+# on:
+#   workflow_dispatch: {}
+#   push:
+#     branches:
+#       - main
+#       - main2
 
-jobs:
-  copy-file:
-    name: apiserver - sync to openapi repos
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+# jobs:
+#   copy-file:
+#     name: apiserver - sync to openapi repos
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
           
           
-      - name: Copy files to another repository
-        uses: nkoppel/push-files-to-another-repository@v1.1.1
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-files: 'source_dir/file_main.txt'
-          destination-username: 'ashutosh-yb'
-          destination-repository: 'repo2'
-          destination-directory: 'dir/'
-          destination-branch: ${{ github.ref_name }}
-          commit-email: 'aanshu@yugabyte.com'
+#       - name: Copy files to another repository
+#         uses: nkoppel/push-files-to-another-repository@v1.1.1
+#         env:
+#           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+#         with:
+#           source-files: 'source_dir/file_main.txt'
+#           destination-username: 'ashutosh-yb'
+#           destination-repository: 'repo2'
+#           destination-directory: 'dir/'
+#           destination-branch: ${{ github.ref_name }}
+#           commit-email: 'aanshu@yugabyte.com'
           
