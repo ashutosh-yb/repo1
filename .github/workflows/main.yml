@@ -27,6 +27,6 @@ jobs:
           destination-username: 'ashutosh-yb'
           destination-repository: 'repo2'
           destination-directory: 'dir/'
-          destination-branch: 'main'
+          destination-branch: 'new_branch'
           commit-email: 'aanshu@yugabyte.com'
           
