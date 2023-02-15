@@ -1,4 +1,4 @@
-file inside repo1 main2 branch
+this file is inside repo1 main2 branch
 
 
 
