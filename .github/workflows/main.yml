@@ -1,11 +1,11 @@
-# name: Sync to openapi repos
+name: Sync to openapi repos
 
-# on:
-#   workflow_dispatch: {}
-#   push:
-#     branches:
-#       - main
-#       - main2
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+      - main2
 
 # jobs:
 #   copy-file:
