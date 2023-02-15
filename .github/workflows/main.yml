@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: main
           
       - name: Copy files to another repository
         if: github.ref == 'refs/heads/main'
@@ -29,6 +29,11 @@ jobs:
           destination-directory: 'dir/'
           destination-branch: 'main'
           commit-email: 'aanshu@yugabyte.com'
+          
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main2
           
       - name: Copy files to another repository
         if: github.ref == 'refs/heads/main2'
