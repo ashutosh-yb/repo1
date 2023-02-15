@@ -19,7 +19,6 @@ jobs:
           
           
       - name: Copy files to another repository
-        if: github.ref == 'refs/heads/main2'
         uses: nkoppel/push-files-to-another-repository@v1.1.1
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
@@ -28,6 +27,6 @@ jobs:
           destination-username: 'ashutosh-yb'
           destination-repository: 'repo2'
           destination-directory: 'dir/'
-          destination-branch: 'new_branch'
+          destination-branch: ${{ github.ref_name }}
           commit-email: 'aanshu@yugabyte.com'
           
