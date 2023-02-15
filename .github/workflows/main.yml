@@ -23,7 +23,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-files: 'source.txt'
+          source-files: 'source_dir/file2.txt'
           destination-username: 'ashutosh-yb'
           destination-repository: 'repo2'
           destination-directory: 'dir/'
