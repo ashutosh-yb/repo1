@@ -40,7 +40,7 @@ jobs:
           destination-username: 'ashutosh-yb'
           destination-repository: 'repo2'
           destination-directory: 'dir/'
-          destination-branch: ${{ github.ref_name }}
+          destination-branch: 'repo2branch'
           commit-email: 'aanshu@yugabyte.com'
           
           
