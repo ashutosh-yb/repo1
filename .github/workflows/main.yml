@@ -7,15 +7,15 @@ on:
       - main
       - main2
 
-# jobs:
-#   copy-file:
-#     name: apiserver - sync to openapi repos
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
-#         with:
-#           fetch-depth: 0
+jobs:
+  copy-file:
+    name: apiserver - sync to openapi repos
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
           
           
 #       - name: Copy files to another repository
