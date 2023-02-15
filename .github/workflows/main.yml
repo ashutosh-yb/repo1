@@ -15,7 +15,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: github.ref
           
       - name: Copy files to another repository
         if: github.ref == 'refs/heads/main'
